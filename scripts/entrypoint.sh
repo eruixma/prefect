@@ -21,6 +21,8 @@ if [ -z "$*" ]; then
 
 "
   exec bash --login
+  prefect server start --host 0.0.0.0
+  prefect config set PREFECT_API_URL=https://prefect-savr.onrender.com/api
 else
   exec "$@"
 fi
